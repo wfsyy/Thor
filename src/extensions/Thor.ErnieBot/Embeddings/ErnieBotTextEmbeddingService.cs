@@ -19,7 +19,7 @@ public class ErnieBotTextEmbeddingService : IThorTextEmbeddingService
         }
 
         var response = await HttpClientFactory.GetHttpClient(options.Address).PostJsonAsync(
-            options?.Address.TrimEnd('/') + "/v2/embeddings",
+            options?.Address.TrimEnd('/') + $"/v1/wenxinworkshop/embeddings/{createEmbeddingModel.Model}",
             createEmbeddingModel, options!.ApiKey);
 
         var result =
